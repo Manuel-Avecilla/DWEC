@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindormo</title>
+</head>
+<body>
+    <script>
+        let palabra = prompt("Introduce una palabra: ")
+
+        let esPalindromo = true
+
+        for (let i = 0; i < (palabra.length) / 2; i++) {
+            if (palabra[i] != palabra[palabra.length-i-1]){
+                esPalindromo = false
+                break
+            }    
+        }
+
+        if (esPalindromo) {
+            alert("La palabra ES Palindormo")
+        } else {
+            alert("La palabra NO es Palindormo")
+        }
+        
+    </script>
+</body>
+</html>

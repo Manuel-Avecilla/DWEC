@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedir numero</title>
+</head>
+<body>
+    
+    <script>
+
+        /*dado un numero elegido, siendo este mayor que 10.Se pide que cumpla las siguientes condiciones: 
+        Si el numero es par, que se muestre por consola "El numero es par"
+        Si el numero es impar, que se muestre por pantalla/consola "El numero es impar"
+        Si el numero es multiplo de 3 pondrá un mensaje mostrando "viva el sevilla", sin que muestre si es par o impar. 
+        Si el numero es multiplo de 5 pondrá un mensaje mostrando "viva el betis", sin que muestre si es par o impar.
+        Y si es multiplo de 15 pondrá un mensaje mostrando "viva el sevilla y el betis", sin que muestre si es par o impar.
+        RECUERDA: LOS NUMEROS DE LOS MULTIPLOS PEDIDOS NO PODRAN MOSTRAR SI ES PAR O IMPAR, SOLAMENTE MOSTRARAN EL MENSAJE INDICADO.
+        
+
+        let numero = prompt("Dime un numero")
+        numero = parseInt(numero)
+
+        if (isNaN(numero)){
+            alert("Eso no es un numero.")
+        } else if (numero < 10) {
+            alert("El numero debe ser mayor de 10.")
+        } else {
+            for (let i=1; i<=numero; i++){
+                if (i%15==0){
+                    console.log(i+" | Viva el Sevilla y el Betis.")
+                } else if (i%5 == 0) {
+                    console.log(i+" | Viva el Betis.")
+                } else if (i%3 == 0) {
+                    console.log(i+" | Viva el Sevilla.")
+                } else if (i%2 == 0){
+                    console.log(i+" | Numero Par.")
+                } else {
+                    console.log(i+" | Numero Impar.")
+                }   
+            }
+        }
+
+        */
+        function pedirNumero(mensaje) {
+            let intentos = 1;
+            let num;
+            let alerta = "DEBE SER UN NUMERO"
+
+            do {
+                num = parseFloat(prompt(mensaje));
+
+                if (isNaN(num)) {
+                    alert("El valor introducido no es un numero. Intentos = " + intentos);
+                    intentos++;
+                }
+
+            } while (isNaN(num) && intentos <= 3);
+
+            
+            while (isNaN(num)) {
+                num = parseFloat(prompt(alerta + " | " + mensaje));
+            }
+
+            return num;
+        }
+
+        let opcion = 0
+        let resultado = 0
+
+        do {
+            opcion = parseInt(prompt("Que operacion desea realizar. |1-SUMA| |2-RESTA| |3-MULTIPICACION| |4-DIVISION|"))
+            if (opcion < 0 || opcion > 4 || isNaN(opcion)) {
+                alert("ERROR| Opcion no disponible")
+            }
+        } while (opcion < 0 || opcion > 4 || isNaN(opcion))
+
+        let num1 = pedirNumero("Dime el PRIMER numero:");
+        let num2 = pedirNumero("Dime el SEGUNDO numero:");
+        let num3 = pedirNumero("Dime el TERCER numero:");
+        let num4 = pedirNumero("Dime el CUARTO numero:");
+
+        switch (opcion) {
+            case 1:
+                resultado = num1 + num2 + num3 + num4;
+                alert("El resultado de "+num1+" + "+num2+" + "+num3+" + "+num4+" es: "+resultado);
+                break;
+
+            case 2:
+                resultado = num1 - num2 - num3 - num4;
+                alert("El resultado de "+num1+" - "+num2+" - "+num3+" - "+num4+" es: "+resultado);
+                break;
+
+            case 3:
+                resultado = num1 * num2 * num3 * num4;
+                alert("El resultado de "+num1+" x "+num2+" x "+num3+" x "+num4+" es: "+resultado);
+                break;
+
+            case 4:
+                resultado = num1 / num2 / num3 / num4;
+                alert("El resultado de "+num1+" / "+num2+" / "+num3+" / "+num4+" es: "+resultado);
+                break;
+        
+        }
+    </script>
+
+</body>
+</html>
