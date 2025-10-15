@@ -1,7 +1,13 @@
 let myArray=[]
 console.log(myArray);
-myArray.push('1','2','3')
+myArray.push('hola1','hola2','hola3')
 console.log(myArray);
+
+function logArrayElements(element, index, array) {
+    console.log("a[" + index + "] = " + element);
+}
+myArray.forEach(logArrayElements);
+myArray.forEach((valor,indice,array)=>console.log(`valor ${valor} indice ${indice} array ${array}`))
 
 myArray = new Array()
 console.log(myArray);
