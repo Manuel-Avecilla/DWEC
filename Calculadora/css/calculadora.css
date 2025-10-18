@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #04030F;
+    box-shadow: rgba(5, 5, 94, 0.25) 0px 40px 70px -22px inset, rgba(0, 0, 0, 0.3) 0px 28px 46px -28px inset;
+}
+.calculadora {
+    flex: 1 1 600px;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: #171717;
+    border:  2px solid white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    
+    max-width: 800px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 8px 24px, rgba(255, 255, 255, 0.1) 0px 16px 56px, rgba(255, 255, 255, 0.1) 0px 24px 80px;
+}
+#display {
+    background-color: #121212;
+    border:  2px solid white;
+    color: white;
+    flex: 1 1 10%;
+    padding: 1.5rem;
+    font-size: 2rem;
+    text-align: right;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    font-family: monospace;
+    font-weight: 600;
+    
+}
+#buttons{
+    flex: 1 1 90%;
+    display: flex;
+    border:  1px solid white;
+    background-color: #232323;
+    
+    padding: 1rem;
+    border-radius: 1rem;
+}
+#buttons-1 {
+    flex: 1 1 65%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-right: 1rem;
+}
+#buttons-2 {
+    flex: 1 1 35%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding-left: 1rem;
+    border-left: 1px solid white;
+}
+button {
+    background-color: #181818;
+    color: white;
+    border: 1px solid white;
+    font-weight: 600;
+    font-family: monospace;
+    font-size: 1.5rem;
+    padding: 1rem 0.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: white 0px 0px 0px, white 0px 0px 0px 0px, rgba(255, 255, 255, 0.685) -2px -3px 1px inset;
+    transition: all 0.3s ease;
+}
+button:hover{cursor: pointer;}
+button:active{
+    box-shadow: white 0px 0px 0px, white 0px 0px 0px 0px, rgba(255, 255, 255, 0.685) 2px 3px 1px inset;
+}
+
+#igual {
+    grid-row: span 2;
+    background-color: #008F66;
+}
+#igual:hover{
+    background-color: #003D2C;
+}
+#borrar {
+    grid-column: span 2;
+    background-color: #721817;
+}
+#borrar:hover {background-color: #440E0D;}
+#atras{background-color: #1D3461;}
+#atras:hover {background-color: #13213F;}
+button.num-impar:hover {background-color: #003D2C;}
+button.num-par:hover {background-color: #440E0D;}
+.amarillo:hover {background-color: #8F6400;}
+
+#cero{grid-column: span 2;}
+
+@media (width <= 500px) {
+    .calculadora{width: 100%; min-width: 300px;}
+    button {padding: 0.6rem;}
+    #display{
+        font-size: 2rem;
+        padding: 0.8rem;
+    }
+    #buttons {flex-direction: column;}
+    #buttons-1 {
+        margin-right: 0;
+        margin-bottom: 1.6rem;
+    }
+    #buttons-2 {
+        padding-left: 0;
+        border: transparent;
+        border-top: 1px solid white;
+        padding-top: 1.6rem;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    #igual {
+        grid-column: span 4;
+        grid-row: span 1;
+        order: 1;
+    }
+}
+
+
+
+
