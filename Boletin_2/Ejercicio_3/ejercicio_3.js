@@ -13,8 +13,8 @@ function pedirNumero(mensaje) {
             esValido = false
         }
 
-        if (num <= 0) {
-            alert("El valor introducido debe ser un numero positivo.");
+        if (num === 0) {
+            alert("El valor 0 no tiene inverso.")
             esValido = false
         }
 
@@ -22,9 +22,8 @@ function pedirNumero(mensaje) {
     return num
 }
 
-const radio = pedirNumero("Introduce el radio de la esfera:");
+const numero = pedirNumero("Introduce un numero")
+alert("El valor inverso es: "+(numero*-1))
 
-const area = 4 * Math.PI * Math.pow(radio, 2);
-const volumen = (4 / 3) * Math.PI * Math.pow(radio, 3);
 
-alert(`El area de la esfera es ${area.toFixed(2)} y el volumen es ${volumen.toFixed(2)}`);
+
