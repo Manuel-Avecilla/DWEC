@@ -24,16 +24,13 @@ function pedirNumero(mensaje) {
 
 let numero = pedirNumero("Introduce un numero")
 let text_numero = numero
-let numeroBinario = ""
-let text = ""
+let binario = ""
 
 while (numero>0) {
-    text += numero%2
+    binario = (numero%2) + "" + binario
     numero = Math.trunc(numero/2)
 }
 
-for (let i = text.length; i >= 0; i--) {
-    numeroBinario += text.charAt(i)
-}
+alert(`El numero ${text_numero} en binario es ${binario}`)
 
-alert(`El numero ${text_numero} en binario es ${numeroBinario}`)
+alert(text_numero.toString(2))
