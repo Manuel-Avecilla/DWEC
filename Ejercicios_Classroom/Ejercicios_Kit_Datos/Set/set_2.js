@@ -6,14 +6,20 @@
 // Crea un Set llamado 'idsUnicos' a partir del array [101, 105, 101, 103, 105].
 // Imprime el Set resultante y verifica su propiedad size.
 
+let idsUnicos = new Set([101, 105, 101, 103, 105])
 
+console.log(idsUnicos);
+console.log(idsUnicos.size);
 
 // 2. Adición y Comprobación
 // Añade el número 107 a 'idsUnicos'.
 // Intenta añadir de nuevo el número 105. ¿Cambió el tamaño?
 // Demuéstralo imprimiendo 'idsUnicos.size'.
 
-
+idsUnicos.add(107)
+console.log(idsUnicos.size);
+idsUnicos.add(107)
+console.log(idsUnicos.size);
 
 // =======================
 //    Nivel Intermedio
@@ -23,25 +29,32 @@
 // Usa el método has() para comprobar si el ID 103 existe en el Set.
 // Luego, comprueba si existe el ID 999.
 
-
+console.log(idsUnicos.has(103));
+console.log(idsUnicos.has(999));
 
 // 4. Eliminación Condicional
 // Elimina el ID 107 si existe en el Set.
 // Usa un if junto con has() para asegurarte de que solo lo intentas borrar si está.
 
-
+if (idsUnicos.has(107)){
+    idsUnicos.delete(107)
+}
 
 // 5. Conversión a Array
 // Convierte 'idsUnicos' a un array 'arrayIds' usando el operador spread (...).
 // Muestra el array.
 
+let arrayIds = [...idsUnicos];
+console.log(arrayIds);
 
 
 // 6. Iteración
 // Utiliza un bucle for...of para recorrer el Set 'idsUnicos' e imprimir cada ID con un mensaje:
 // "El ID encontrado es: [ID]"
 
-
+for (ID of idsUnicos) {
+    console.log(`El ID encontrado es: [${ID}]`);
+}
 
 // =======================
 //     Nivel Avanzado
