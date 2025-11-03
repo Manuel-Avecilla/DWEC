@@ -113,21 +113,21 @@ console.log(frecuencia);
 
 
 class DBManager {
-    datos = new Map();
+    #datos = new Map();
     guardar(id, dato) {
-        return this.datos.set(id, dato);
+        return this.#datos.set(id, dato);
     }
     obtener(id) {
-        if (this.datos.has(id)){
-            return this.datos.get(id);
+        if (this.#datos.has(id)){
+            return this.#datos.get(id);
         } else {
             console.log('Id no encontrado');
             return null
         }
     }
     eliminar(id) {
-        if (this.datos.has(id)){
-            return this.datos.delete(id);
+        if (this.#datos.has(id)){
+            return this.#datos.delete(id);
         } else {
             console.log('Id no encontrado');
             return null
