@@ -66,18 +66,27 @@ for (ID of idsUnicos) {
 // diseñadores = new Set(['Ana', 'Pedro', 'Laura'])
 // Escribe código para obtener un nuevo Set con los nombres que son comunes (intersección).
 
+let desarrolladores = new Set(['Juan', 'Ana', 'Carlos'])
+let diseñadores = new Set(['Ana', 'Pedro', 'Laura'])
 
+let interseccion = new Set([...desarrolladores].filter(nombre => diseñadores.has(nombre)));
+console.log(interseccion);
 
 // 8. Diferencia de Conjuntos
 // Usando los Sets anteriores, escribe código para obtener un nuevo Set con los nombres que son solo desarrolladores 
 // (diferencia: desarrolladores - diseñadores).
 
+let diferencia = new Set([...desarrolladores].filter(nombre => !diseñadores.has(nombre)));
 
+console.log(diferencia);
 
 // 9. Uso de Objetos en un Set
 // Crea un Set llamado 'puntos'. Añade dos objetos de coordenadas iguales, por ejemplo: {x: 10, y: 20} dos veces.
 // ¿Cuántos elementos tiene el Set? (Nota: los objetos son referencias únicas, por eso se cuentan como distintos).
 
+let puntos = new Set([{x: 10, y: 20}, {x: 10, y: 20}])
+
+console.log(puntos);
 
 
 // 10. Normalización de Tags
@@ -85,3 +94,10 @@ for (ID of idsUnicos) {
 // y devuelva un Set de tags únicos convertidos a minúsculas: {'js', 'javascript'}.
 
 
+function normalizarTags(lista) {
+    return new Set(lista.map(nombre => nombre.toLowerCase()))
+}
+
+let lista = normalizarTags(['js', 'JS', 'javascript', 'Js'])
+
+console.log(lista);
